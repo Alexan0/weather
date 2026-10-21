@@ -1,0 +1,129 @@
+.weather-background {
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+}
+
+.weather-cloud {
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  border-radius: 999px;
+  height: 5rem;
+  position: absolute;
+  width: 14rem;
+
+  &::before,
+  &::after {
+    background: inherit;
+    border-radius: 999px;
+    content: '';
+    position: absolute;
+  }
+
+  &::before {
+    height: 4rem;
+    left: 2.5rem;
+    top: -1.75rem;
+    width: 6rem;
+  }
+
+  &::after {
+    height: 3rem;
+    right: 2rem;
+    top: -1rem;
+    width: 5rem;
+  }
+}
+
+.weather-card {
+  animation: weather-card-enter 600ms ease-out both;
+
+  &:nth-child(2) {
+    animation-delay: 80ms;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 160ms;
+  }
+
+  &:nth-child(4) {
+    animation-delay: 240ms;
+  }
+}
+
+.skeleton-block {
+  animation: skeleton-pulse 1.8s ease-in-out infinite;
+}
+
+.weather-cloud-one {
+  left: -2rem;
+  top: 20%;
+}
+
+.weather-cloud-two {
+  right: -5rem;
+  top: 55%;
+  opacity: 0.65;
+  transform: scale(0.75);
+}
+
+.weather-cloud-three {
+  bottom: 18%;
+  left: 42%;
+  opacity: 0.62;
+  transform: scale(0.55);
+}
+
+.weather-cloud-four {
+  right: 28%;
+  top: 30%;
+  opacity: 0.5;
+  transform: scale(0.45);
+}
+
+.weather-cloud-five {
+  bottom: 28%;
+  left: 26%;
+  opacity: 0.45;
+  transform: scale(0.38);
+}
+
+@media (max-width: 767px) {
+  .weather-cloud-one {
+    left: -4rem;
+    top: 8%;
+    opacity: 0.28;
+    transform: scale(0.45);
+  }
+}
+
+@keyframes weather-card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes skeleton-pulse {
+  0%,
+  100% {
+    opacity: 0.72;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .weather-card,
+  .weather-cloud,
+  .skeleton-block {
+    animation: none;
+  }
+}
