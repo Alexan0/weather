@@ -23,7 +23,7 @@ export function Search({ className, containerClassName, ...props }: Props) {
       <input
         type='search'
         className={cn(
-          'min-w-0 flex-1 bg-transparent text-sm font-normal outline-none placeholder:text-foreground-muted [&::-webkit-search-cancel-button]:hidden',
+          'min-w-0 flex-1 bg-transparent text-base font-normal outline-none placeholder:text-foreground-muted sm:text-sm [&::-webkit-search-cancel-button]:hidden',
           className
         )}
         {...props}
