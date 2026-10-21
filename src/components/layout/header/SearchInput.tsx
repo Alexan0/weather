@@ -125,6 +125,7 @@ export function SearchInput() {
                     <button
                       className='flex w-full items-start rounded-xl px-3 py-2 text-left transition-colors hover:bg-surface-muted'
                       onClick={() => selectLocation(city)}
+                      onPointerDown={event => event.preventDefault()}
                       type='button'
                     >
                       <span>
@@ -151,6 +152,7 @@ export function SearchInput() {
                   <button
                     className='flex w-full items-start rounded-xl px-3 py-2 text-left transition-colors hover:bg-surface-muted'
                     onClick={() => selectCity(city)}
+                    onPointerDown={event => event.preventDefault()}
                     type='button'
                   >
                     <span>
